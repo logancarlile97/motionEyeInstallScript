@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 read -p "This script will install MotionEye Are you sure? " -n 1 -r
 echo    # (optional) move to a new line
