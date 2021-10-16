@@ -18,6 +18,8 @@ then
     apt upgrade -y
     
     echo "Installing ssh, curl, motion, ffmpeg, and v4l-utils"
+
+    apt install ssh curl motion ffmpeg v4l-utils -y
     
     echo "Installing python 2.7 and pip2"
     
