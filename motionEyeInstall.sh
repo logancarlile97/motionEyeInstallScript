@@ -9,19 +9,39 @@ then
         exit
     fi
     
+    echo
+    echo
+    echo "---------------------------------------------"
     echo "Checking for updates"
+    echo "---------------------------------------------"
+    echo
     
     apt update
     
+    echo
+    echo
+    echo "---------------------------------------------"
     echo "Installing updates"
+    echo "---------------------------------------------"
+    echo
     
     apt upgrade -y
     
+    echo
+    echo
+    echo "---------------------------------------------"
     echo "Installing ssh, curl, motion, ffmpeg, and v4l-utils"
-
+    echo "---------------------------------------------"
+    echo
+    
     apt install ssh curl motion ffmpeg v4l-utils -y
     
+    echo
+    echo
+    echo "---------------------------------------------"
     echo "Installing python 2.7 and pip2"
+    echo "---------------------------------------------"
+    echo
     
     apt install python2 -y
     
@@ -29,7 +49,12 @@ then
     
     python2 get-pip.py
     
+    echo
+    echo
+    echo "---------------------------------------------"
     echo "Installing all prerequisites"
+    echo "---------------------------------------------"
+    echo
     
     apt install libffi-dev libzbar-dev libzbar0 -y
     
@@ -37,20 +62,40 @@ then
     
     apt install python-pil -y
     
+    echo
+    echo
+    echo "---------------------------------------------"
     echo "Installing MotionEye"
+    echo "---------------------------------------------"
+    echo
     
     pip2 install motioneye
     
+    echo
+    echo
+    echo "---------------------------------------------"
     echo "Preparing the configuration directory"
+    echo "---------------------------------------------"
+    echo
     
     mkdir -p /etc/motioneye
     cp /usr/local/share/motioneye/extra/motioneye.conf.sample /etc/motioneye/motioneye.conf
     
+    echo
+    echo
+    echo "---------------------------------------------"
     echo "Preparing the media directory"
+    echo "---------------------------------------------"
+    echo
     
     mkdir -p /var/lib/motioneye
     
+    echo
+    echo
+    echo "------------------------------------------------------"
     echo "Make a MotionEye service to make it run as a service"
+    echo "------------------------------------------------------"
+    echo
     
     cp /usr/local/share/motioneye/extra/motioneye.systemd-unit-local /etc/systemd/system/motioneye.service
     systemctl daemon-reload
@@ -63,10 +108,19 @@ then
         shutdown -r now
     fi
     
+    echo
+    echo
+    echo "---------------------------------------------"
     echo "You chose to reboot later, MotionEye will not work until you reboot."
+    echo "---------------------------------------------"
+    echo
+
     exit
     
 else
+    echo
+    echo
+    echo "---------------------------------------------"
     echo "Exiting script"
     exit
 fi
